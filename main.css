@@ -35,10 +35,13 @@ body {
 .ai-card img {
   width: 80px;
   height: 80px;
-  object-fit: cover;
-  border-radius: 50%;   /* makes logos circular */
   margin-bottom: 15px;
+  object-fit: contain; /* keeps logo proportions */
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* centers the logo */
 }
+
 
 /* Titles */
 .ai-card h3 {
@@ -76,3 +79,4 @@ body {
 .ai-card a button:hover {
   background-color: #316dca;
 }
+
