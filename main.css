@@ -30,7 +30,10 @@ body {
   border-radius: 50%;
   display: block;
   margin: 0 auto 15px auto;
+  background-color: white; /* keeps logos visible if transparent */
+  padding: 10px; /* optional: adds breathing space */
 }
+
 
 
 @keyframes pulse {
@@ -149,4 +152,5 @@ body {
 .text-glow {
     text-shadow: 0 0 8px rgba(74, 209, 230, 0.7), 0 0 12px rgba(74, 209, 230, 0.5);
 }
+
 
