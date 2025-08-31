@@ -1,165 +1,78 @@
+/* General Body Styling */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0b1120;
-    overflow-x: hidden;
-    position: relative;
-}
-
-#particle-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: radial-gradient(at 50% 100%, #1a202c, #0b1120);
-    background-attachment: fixed;
-}
-
-.particle {
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    opacity: 0;
-    animation: pulse 5s infinite;
-}
-.tool-logo {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto 15px auto;
-  background-color: white; /* keeps logos visible if transparent */
-  padding: 10px; /* optional: adds breathing space */
-}
-
-.ai-card a button {
-  min-width: 100px;
-  padding: 8px 16px;
-  border-radius: 20px;
+  background-color: #0d1117;
+  color: white;
+  font-family: Arial, sans-serif;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
+/* Container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
 }
 
+/* Each Card */
 .ai-card {
-    background-color: #0b1120;
-    border-radius: 1.5rem;
-    box-shadow: 0 0 20px rgba(74, 209, 230, 0.3);
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid transparent;
-    z-index: 10;
-
-    /* ✅ Flexbox for alignment */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 340px; /* same card height for consistency */
-    padding: 1.5rem;
-}
-
-.ai-card img {
-    width: 96px;
-    height: 96px;
-    object-fit: cover;
-    border-radius: 50%;   /* ✅ circular logos */
-    margin-bottom: 1rem;
-    display: block;
-    pointer-events: none; /* avoid blocking buttons */
-}
-
-.ai-card h2 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
-.ai-card a {
-    margin-top: auto; /* ✅ pushes button to bottom of card */
-    display: inline-block;
-    text-align: center;
+  background: #161b22;
+  border-radius: 12px;
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .ai-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 40px rgba(74, 209, 230, 0.7);
-    border-image: linear-gradient(45deg, #a3e635, #4ad1e6, #d8b4fe) 1;
-    animation: pulse-border 1.5s infinite;
+  transform: scale(1.05);
 }
 
-@keyframes pulse-border {
-    0% { border-image-slice: 1; border-image-source: linear-gradient(45deg, #a3e635, #4ad1e6, #d8b4fe); }
-    50% { border-image-slice: 1; border-image-source: linear-gradient(90deg, #d8b4fe, #a3e635); }
-    100% { border-image-slice: 1; border-image-source: linear-gradient(135deg, #4ad1e6, #d8b4fe, #a3e635); }
+/* Logos */
+.ai-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;   /* makes logos circular */
+  margin-bottom: 15px;
 }
 
-.loading-animation {
-    border: 4px solid rgba(255, 255, 255, 0.1);
-    border-left-color: #4ad1e6;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    animation: spin 1s linear infinite;
+/* Titles */
+.ai-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  min-height: 40px;     /* ensures titles align at same height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+/* Descriptions */
+.ai-card p {
+  font-size: 14px;
+  color: #ccc;
+  min-height: 40px;     /* keeps descriptions aligned */
+  margin-bottom: 15px;
 }
 
-.chat-bubble {
-    max-width: 85%;
-    padding: 0.75rem 1.25rem;
-    border-radius: 1.5rem;
-    margin-bottom: 0.75rem;
-    font-size: 0.95rem;
-    line-height: 1.4;
+/* Buttons */
+.ai-card a button {
+  background-color: #1f6feb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  min-width: 90px;   /* keeps button size consistent */
+  max-width: 100px;  /* prevents stretching */
+  text-align: center;
 }
 
-.user-message {
-    background-color: #3f1947;
-    color: #d8b4fe;
-    margin-left: auto;
-    border-bottom-right-radius: 0.5rem;
+.ai-card a button:hover {
+  background-color: #316dca;
 }
-
-.ai-message {
-    background-color: #1a202c;
-    color: #a3e635;
-    margin-right: auto;
-    border-bottom-left-radius: 0.5rem;
-}
-
-#chatContainer::-webkit-scrollbar {
-    width: 8px;
-}
-#chatContainer::-webkit-scrollbar-track {
-    background: #1a202c;
-    border-radius: 10px;
-}
-#chatContainer::-webkit-scrollbar-thumb {
-    background: #4ad1e6;
-    border-radius: 10px;
-}
-
-.text-glow {
-    text-shadow: 0 0 8px rgba(74, 209, 230, 0.7), 0 0 12px rgba(74, 209, 230, 0.5);
-}
-
-
-
-
