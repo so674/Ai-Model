@@ -23,6 +23,15 @@ body {
     opacity: 0;
     animation: pulse 5s infinite;
 }
+.tool-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
 
 @keyframes pulse {
     0%, 100% {
@@ -140,3 +149,4 @@ body {
 .text-glow {
     text-shadow: 0 0 8px rgba(74, 209, 230, 0.7), 0 0 12px rgba(74, 209, 230, 0.5);
 }
+
