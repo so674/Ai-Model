@@ -36,6 +36,7 @@ body {
 
 
 
+
 @keyframes pulse {
     0%, 100% {
         opacity: 0;
@@ -152,5 +153,6 @@ body {
 .text-glow {
     text-shadow: 0 0 8px rgba(74, 209, 230, 0.7), 0 0 12px rgba(74, 209, 230, 0.5);
 }
+
 
 
